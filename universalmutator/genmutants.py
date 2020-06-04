@@ -103,9 +103,15 @@ def main():
         print("       --swap: also try adjacent-code swaps")
         print("       --redundantOK: keep redundant mutants (for compiler output issues)")
         print("       --showRules: show rule source used to generate each mutant")
+        print("       --onlyUniversalRules: generate mutant code using only universal rules")
         print()
         print("Currently supported languages: ", ", ".join(list(set(languages.values()))))
         sys.exit(0)
+
+    onlyUniversal = False
+    if "--onlyUniversalRules" in args:
+        onlyUniversal = True
+        args.remove("--onlyUniversalRules")
 
     noCheck = False
     if "--noCheck" in args:
@@ -295,7 +301,10 @@ def main():
         otherRules.append("solidity.rules")
 
     rules = ["universal.rules", language + ".rules"] + otherRules
-    if fuzz:
+
+    if onlyUniversal:
+        rules = ["universal.rules"]
+    elif fuzz:
         if language == "none":
             fuzzRules = ["universal.rules", "c_like.rules", "python.rules", "vyper.rules", "solidity.rules"]
             rules = list(set(fuzzRules + rules))

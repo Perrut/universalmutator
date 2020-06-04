@@ -1,3 +1,11 @@
+# Este fork foi gerado com o intuito de adicionar alguns recursos ao Universal Mutator que podem me ajudar no meu trabalho de conclusão de curso
+
+Os recursos são:
+
+- Permitir que o Universal Mutator execute um subconjunto de operadores de mutação específicos
+
+## Abaixo segue o README original
+
 This is a tool based purely on regexp-specified rewrite of code lines for mutation generation, including
 multi-language rules aided by special rules for languages or even projects.
 

@@ -4,8 +4,8 @@ from setuptools import setup, find_packages
 import sys, os
 
 setup(
-    name='universalmutator',
-    version='0.9.6',
+    name='universalmutator-tcc-matheus-perrut',
+    version='0.0.1',
     description='Universal regexp-based mutation tool',
     long_description_content_type="text/markdown",
     long_description=open('README.md').read(),
